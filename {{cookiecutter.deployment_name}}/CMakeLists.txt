@@ -25,3 +25,5 @@ set(MOD_DEPS ${FPRIME_CURRENT_MODULE}/Top)
 register_fprime_deployment()
 
 finalize_arduino_executable("${FPRIME_CURRENT_MODULE}")
+
+set_target_properties(Svc_FatalHandler PROPERTIES EXCLUDE_FROM_ALL TRUE) # Temporary to fix bug in F Prime Release v3.5.0

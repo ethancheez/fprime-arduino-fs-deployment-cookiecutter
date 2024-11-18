@@ -30,7 +30,9 @@ void setup() {
     Serial.begin(115200);
     static_cast<Os::Arduino::StreamConsoleHandle*>(Os::Console::getSingleton().getHandle())->setStreamHandler(Serial);
 
-    // Setup SD Card. Change BUILTIN_SDCARD to the SPI chip select ping of the SD card
+    // Setup SD Card.
+    // If not using the built-in SD card (or if there is no built-in SD card slot),
+    // change BUILTIN_SDCARD to the SPI chip select pin of the SD card.
     SD.begin(BUILTIN_SDCARD);
 
     // Object for communicating state to the reference topology
